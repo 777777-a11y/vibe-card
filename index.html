@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>我的个人主页</title>
+    <style>
+        :root {
+            --bg: #ffffff;
+            --text: #222222;
+            --card: #f7f7f7;
+            --accent: #3b82f6;
+        }
+        .dark {
+            --bg: #121212;
+            --text: #eeeeee;
+            --card: #1f1f1f;
+            --accent: #60a5fa;
+        }
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: system-ui, -apple-system, sans-serif;
+        }
+        body {
+            background-color: var(--bg);
+            color: var(--text);
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 20px;
+            transition: background 0.3s, color 0.3s;
+        }
+        .container {
+            background: var(--card);
+            padding: 40px;
+            border-radius: 16px;
+            max-width: 520px;
+            width: 100%;
+            box-shadow: 0 8px 24px rgba(0,0,0,0.08);
+        }
+        .header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 24px;
+        }
+        h1 {
+            font-size: 28px;
+        }
+        #toggleBtn {
+            border: none;
+            background: var(--accent);
+            color: white;
+            padding: 8px 14px;
+            border-radius: 8px;
+            cursor: pointer;
+            font-size: 14px;
+        }
+        p {
+            line-height: 1.7;
+            margin-bottom: 16px;
+            font-size: 16px;
+        }
+        .link {
+            display: inline-block;
+            margin-top: 10px;
+            color: var(--accent);
+            text-decoration: none;
+            font-weight: 500;
+        }
+        .link:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>你好👋</h1>
+            <button id="toggleBtn">切换主题</button>
+        </div>
+        <p>欢迎来到我的个人主页。</p>
+        <p>这是用 Vibe Coding 快速写出来的静态页面，放在 GitHub，通过 Netlify 免费上线。</p>
+        <p>你可以修改这里的文字、颜色、布局，改完上传到 GitHub，网站会自动更新。</p>
+        <a class="link" href="https://github.com" target="_blank">去看看 GitHub</a>
+    </div>
+
+    <script>
+        const btn = document.getElementById('toggleBtn');
+        btn.addEventListener('click', () => {
+            document.body.classList.toggle('dark');
+        })
+    </script>
+</body>
+</html>
